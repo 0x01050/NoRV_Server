@@ -12,6 +12,12 @@ class Machine extends BaseController
         $machineModel = new \App\Models\MachineModel();
         $machineModel->insert($machine);
 
+        $status = new \App\Entities\Status();
+        $status->id = $data['id'];
+        
+        $statusModel = new \App\Models\StatusModel();
+        $statusModel->report($status);
+
         echo 'Successfully Added';
 	}
 
@@ -32,6 +38,6 @@ class Machine extends BaseController
 	public function getMachine($type, $deviceID)
 	{
         $machineModel = new \App\Models\MachineModel();
-        echo $machineModel->getMachine($type, $deviceID);
+        echo json_encode($machineModel->getMachine($type, $deviceID));
     }
 }

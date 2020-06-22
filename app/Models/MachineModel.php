@@ -15,8 +15,11 @@ class MachineModel extends Model
                          ->findAll();
         foreach($machines as $machine)
         {
-            return $machine->id;
+            return array(
+                'status' => 'ok',
+                'id' => $machine->id
+            );
         }
-        return '';
+        return (object)array();
     }
 }
