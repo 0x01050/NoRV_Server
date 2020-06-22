@@ -8,8 +8,8 @@ class StatusModel extends Model
     protected $primaryKey     = 'id';
     protected $returnType     = 'App\Entities\Machine';
     protected $allowedFields  = [
-        'id', 'master_update', 'usage', 'obs', 'button', 'depo', 'jobs', 
-        'start', 'end', 'screenshot', 'slave_update', 'obs_update'
+        'id', 'master_update', 'usage', 'obs', 'button', 'depo', 
+        'jobs', 'witness', 'screenshot', 'slave_update', 'obs_update'
     ];
 
     private function formatter($machine)
@@ -23,8 +23,7 @@ class StatusModel extends Model
                 'button' => '',
                 'depo' => '',
                 'jobs' => '',
-                'start' => '',
-                'end' => '',
+                'witness' => '',
                 'screenshot' => '',
                 'slave' => 'Slave Offline',
                 'slave_obs' => ''

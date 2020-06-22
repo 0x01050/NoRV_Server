@@ -66,3 +66,6 @@ $routes->get('status/obs/(:segment)', 'Status::getOBSActivity/$1');				// Get OB
 $routes->post('status/master', 'Status::reportMaster');							// Report Master Status
 $routes->post('status/slave', 'Status::reportSlave');							// Report Slave Status
 $routes->post('status/obs', 'Status::reportOBS');								// Report OBS Status
+
+$routes->post('info', 'Info::update');											// Update Info
+$routes->get('info', 'Info::retrieve');											// Get Info

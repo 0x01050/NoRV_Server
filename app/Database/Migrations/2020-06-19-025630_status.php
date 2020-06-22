@@ -8,7 +8,7 @@ class Status extends Migration{
         $this->forge->addField([
             'id'          		=> [
                     'type'           => 'VARCHAR',
-                    'constraint'     => '16'
+                    'constraint'     => '128'
             ],
             'master_update'       => [
                     'type'           => 'DATETIME'
@@ -33,17 +33,11 @@ class Status extends Migration{
                     'type'           => 'VARCHAR',
                     'constraint'     => '512'
             ],
-            'start'          	=> [
-                    'type'           => 'VARCHAR',
-                    'constraint'     => '512'
-            ],
-            'end'             	=> [
-                    'type'           => 'VARCHAR',
-                    'constraint'     => '512'
+            'witness'          	=> [
+                    'type'           => 'TEXT'
             ],
             'screenshot'       	=> [
-                    'type'           => 'VARCHAR',
-                    'constraint'     => '512'
+                    'type'           => 'TEXT'
             ],
             'slave_update'       => [
                     'type'           => 'DATETIME'
