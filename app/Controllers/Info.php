@@ -23,16 +23,13 @@ class Info extends BaseController
     
 	public function retrieve()
 	{
-        $result = array();
+        $result = (object) array();
         $infoModel = new \App\Models\InfoModel();
         $infos = $infoModel->findAll();
         foreach($infos as $info)
         {
-            $result[$info->key] = $info->value;
+            $result->{$info->key} = $info->value;
         }
-        if(count($result) == 0)
-            echo "{}";
-        else
-            echo json_encode($result);
+        echo json_encode($result);
     }
 }
