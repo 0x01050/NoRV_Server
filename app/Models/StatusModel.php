@@ -17,6 +17,7 @@ class StatusModel extends Model
         if($machine == null)
         {
             $machine = [
+                'computers' => 'Master Offline/Slave Offline',
                 'master' => 'Master Offline',
                 'usage' => '',
                 'obs' => '',
@@ -54,7 +55,7 @@ class StatusModel extends Model
             $machine->slave = 'Slave Offline';
             $machine->slave_obs = '';
         }
-
+        $machine->computers = $machine->master . ' / ' . $machine->slave;
         return $machine;
     }
 
