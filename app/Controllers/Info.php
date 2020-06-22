@@ -28,10 +28,11 @@ class Info extends BaseController
         $infos = $infoModel->findAll();
         foreach($infos as $info)
         {
-            array_push($result, array(
-                $info->key => $info->value
-            ));
+            $result[$info->key] = $info->value;
         }
-        echo json_encode($result);
+        if(count($result) == 0)
+            echo "{}";
+        else
+            echo json_encode($result);
     }
 }
