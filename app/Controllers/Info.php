@@ -17,7 +17,8 @@ class Info extends BaseController
                 $info->key = $key;
             }
             $info->value = $value;
-            $infoModel->save($info);
+            if($info->hasChanged('value'))
+                $infoModel->save($info);
         }
 	}
     
