@@ -22,7 +22,6 @@ class StatusModel extends Model
                 'usage' => '',
                 'obs' => '',
                 'button' => '',
-                'depo' => '',
                 'jobs' => '',
                 'witness' => '',
                 'screenshot' => '',
@@ -40,10 +39,8 @@ class StatusModel extends Model
             $machine->usage = '';
             $machine->obs = '';
             $machine->button = '';
-            $machine->depo = '';
             $machine->jobs = '';
-            $machine->start = '';
-            $machine->end = '';
+            $machine->witness = '';
             $machine->screenshot = '';
         }
         
