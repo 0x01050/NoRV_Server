@@ -37,7 +37,7 @@ class Status extends Migration{
                     'type'           => 'TEXT'
             ],
             'screenshot'       	=> [
-                    'type'           => 'TEXT'
+                    'type'           => 'MEDIUMTEXT'
             ],
             'slave_update'       => [
                     'type'           => 'DATETIME'
