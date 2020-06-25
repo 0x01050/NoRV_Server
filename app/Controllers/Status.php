@@ -25,6 +25,14 @@ class Status extends BaseController
     public function reportMaster()
     {
         $data = $this->request->getPost();
+
+        $machineModel = new \App\Models\MachineModel();
+        $machine = $machineModel->where('master', $data['id'])->first();
+
+        if($machine == null)
+            return;
+        
+        $data['id'] = $machine->id;
         
         $status = new \App\Entities\Status();
         $status->fill($data);
@@ -37,6 +45,14 @@ class Status extends BaseController
     public function reportSlave()
     {
         $data = $this->request->getPost();
+
+        $machineModel = new \App\Models\MachineModel();
+        $machine = $machineModel->where('slave', $data['id'])->first();
+
+        if($machine == null)
+            return;
+        
+        $data['id'] = $machine->id;
         
         $status = new \App\Entities\Status();
         $status->id = $data['id'];
